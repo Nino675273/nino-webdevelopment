@@ -1,5 +1,4 @@
 <?php include __DIR__ . "/../header.php"; 
-$json_string = file_get_contents("https://nino-webdevelopment.herokuapp.com/api/article");
 ?>
 
 <div class="bg-light text-center p-5">
@@ -11,7 +10,7 @@ $json_string = file_get_contents("https://nino-webdevelopment.herokuapp.com/api/
             <h2>Laptops</h2>
             <div class="row">
                 <?php
-                require_once("https://nino-webdevelopment.herokuapp.com/api/article");
+                require_once("/../../database/products.php");
                 foreach ($products as $product) {
                 ?>
                     <div class="col-sm-6 col-md-3 col-xxl-4 mb-3">
