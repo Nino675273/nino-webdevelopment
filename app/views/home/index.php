@@ -10,7 +10,7 @@
             <h2>Laptops</h2>
             <div class="row">
                 <?php
-                require_once("/database/products.php");
+                require_once("/../database/products.php");
                 foreach ($products as $product) {
                 ?>
                     <div class="col-sm-6 col-md-3 col-xxl-4 mb-3">
