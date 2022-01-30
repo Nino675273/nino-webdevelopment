@@ -7,7 +7,11 @@ class HomeController extends Controller {
     }
 
     public function about() {
-        echo "you've reached the about method of the home controller";
+        require __DIR__ . '/../views/about/index.php';
+    }
+
+    public function contact() {
+        require __DIR__ . '/../views/contact/index.php';
     }
 }
 ?>
