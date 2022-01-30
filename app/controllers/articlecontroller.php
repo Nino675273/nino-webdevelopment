@@ -1,27 +1,25 @@
 <?php
+require __DIR__ . '/controller.php';
 require __DIR__ . '/../services/articleservice.php';
 
-class ArticleController
-{
+class ArticleController extends Controller {
 
-    private $articleService;
+    private $articleService; 
 
-    function __construct()
-    {
+    // initialize services
+    function __construct() {
         $this->articleService = new ArticleService();
     }
 
-    public function index()
-    {
-        $model = $this->articleService->getAll();
-
-        require __DIR__ . '/../views/article/index.php';
-    }
-
-    public function single()
-    {
-        $model = $this->articleService->getAll();
-
-        require __DIR__ . '/../views/article/single.php';
+    // router maps this to /article and /article/index automatically
+    public function index() {
+      
+        // retrieve data 
+        $articles = $this->articleService->getAll();
+    
+        // show view, param = accessible as $model in the view
+        // displayView maps this to /views/article/index.php automatically
+        $this->displayView($articles);
     }
 }
+?>
