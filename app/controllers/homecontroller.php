@@ -13,5 +13,9 @@ class HomeController extends Controller {
     public function contact() {
         require __DIR__ . '/../views/contact/index.php';
     }
+
+    public function home() {
+        require __DIR__ . '/../views/home/index.php';
+    }
 }
 ?>
