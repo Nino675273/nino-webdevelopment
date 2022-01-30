@@ -17,9 +17,5 @@ class HomeController extends Controller {
     public function home() {
         require __DIR__ . '/../views/home/index.php';
     }
-
-    public function laptops() {
-        require __DIR__ . '/../views/database/products.php';
-    }
 }
 ?>
