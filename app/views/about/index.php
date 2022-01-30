@@ -7,10 +7,12 @@ include __DIR__ . '/../header.php';
 </div>
     <section>
         <div class="container">
-            <h2>history</h2>
+            <h2>History</h2>
             <p>SecondLabs bestond sinds 2020</p>
             <h3>Wat bieden we aan de klanten?</h3>
             <p>We geven de mogelijkheid om de klanten hun laptops te mogen verkopen EN kopen van andere mede klanten.</p>
+            <h3>Andere vragen?</h3>
+            <p>Neem contact met ons op via Mail of Telefoon als u vragen heeft!</p>
             </div>
     </section>
 
