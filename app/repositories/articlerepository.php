@@ -1,6 +1,7 @@
 <?php
 require __DIR__ . '/repository.php';
 require __DIR__ . '/../models/article.php';
+require __DIR__ . '/../models/product.php';
 
 class ArticleRepository extends Repository
 {
