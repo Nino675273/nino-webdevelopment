@@ -8,7 +8,7 @@ class ArticleController
 
     function __construct()
     {
-        $this->productService = new ArticleService();
+        $this->articleService = new ArticleService();
     }
 
     public function index()
