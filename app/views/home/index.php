@@ -1,4 +1,8 @@
 <?php include __DIR__ . "/../header.php"; 
+
+$json_string = file_get_contents("https://nino-webdevelopment.herokuapp.com/api/article");
+$parsed_json = json_decode($json_string, true);
+
 ?>
 
 <div class="bg-light text-center p-5">

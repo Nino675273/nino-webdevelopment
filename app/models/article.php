@@ -3,134 +3,84 @@
 class Article implements \JsonSerializable {
 
     private int $id;
-    private string $title;
-    private string $content;
-    private string $author;
-    private string $posted_at;
+    private string $name;
+    private string $description;
+    private string $company;
+    private float $price;
+    private string $imageurl;
 
-    public function jsonSerialize(): mixed
+    public function __construct($_id = null, $_name=null, $_description=null, $_company=null, $_price=null, $_imageurl=null)
     {
-        return get_object_vars($this);
+        if ($_id !== null) $this->id = $_id;
+        if ($_name !== null) $this->name = $_name;
+        if ($_description !== null) $this->description = $_description;
+        if ($_company !== null) $this->company = $_company;
+        if ($_price !== null) $this->price = $_price;
+        if ($_imageurl !== null) $this->imageurl = $_imageurl;
     }
-    
-    /**
-     * Get the value of id
-     *
-     * @return int
-     */
-    public function getId(): int
+
+    public function setId(int $id)
+    {
+        $this->id = $id;
+    }
+    public function setName(string $name)
+    {
+        $this->name = $name;
+    }
+
+    public function setDescription(string $description)
+    {
+        $this->description = $description;
+    }
+
+    public function setCompany(string $company)
+    {
+        $this->company = $company;
+    }
+
+    public function setPrice(float $price)
+    {
+        $this->price = $price;
+    }
+
+    public function setImageurl(string $imageurl)
+    {
+        $this->imageurl = $imageurl;
+    }
+
+    public function getId()
     {
         return $this->id;
     }
 
-    /**
-     * Set the value of id
-     *
-     * @param int $id
-     *
-     * @return self
-     */
-    public function setId(int $id): self
+    public function getName()
     {
-        $this->id = $id;
-
-        return $this;
+        return $this->name;
     }
 
-    /**
-     * Get the value of title
-     *
-     * @return string
-     */
-    public function getTitle(): string
+    public function getDescription()
     {
-        return $this->title;
+        return $this->description;
     }
 
-    /**
-     * Set the value of title
-     *
-     * @param string $title
-     *
-     * @return self
-     */
-    public function setTitle(string $title): self
+    public function getCompany()
     {
-        $this->title = $title;
-
-        return $this;
+        return $this->company;
     }
 
-    /**
-     * Get the value of content
-     *
-     * @return string
-     */
-    public function getContent(): string
+    public function getPrice()
     {
-        return $this->content;
+        return $this->price;
     }
 
-    /**
-     * Set the value of content
-     *
-     * @param string $content
-     *
-     * @return self
-     */
-    public function setContent(string $content): self
+    public function getImageurl()
     {
-        $this->content = $content;
-
-        return $this;
+        return $this->imageurl;
     }
 
-    /**
-     * Get the value of author
-     *
-     * @return string
-     */
-    public function getAuthor(): string
+    public function jsonSerialize(): mixed
     {
-        return $this->author;
-    }
-
-    /**
-     * Set the value of author
-     *
-     * @param string $author
-     *
-     * @return self
-     */
-    public function setAuthor(string $author): self
-    {
-        $this->author = $author;
-
-        return $this;
-    }
-
-    /**
-     * Get the value of datetime
-     *
-     * @return string
-     */
-    public function getPostedAt(): string
-    {
-        return $this->posted_at;
-    }
-
-    /**
-     * Set the value of datetime
-     *
-     * @param string $datetime
-     *
-     * @return self
-     */
-    public function setPostedAt(string $datetime): self
-    {
-        $this->posted_at = $datetime;
-
-        return $this;
+        return get_object_vars($this);
     }
 }
 

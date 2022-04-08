@@ -6,18 +6,17 @@ class ArticleController
 
     private $articleService;
 
-    // initialize services
     function __construct()
     {
-        $this->articleService = new ArticleService();
+        $this->productService = new ArticleService();
     }
 
     public function index()
     {
         if ($_SERVER["REQUEST_METHOD"] === "GET") {
-            $products = $this->productService->getAll();
+            $laptops = $this->articleService->getAllArticles();
             header('Content-Type: application/json; charset=utf-8');
-            echo json_encode($products);
+            echo json_encode($laptops);
         }
     }
 }
