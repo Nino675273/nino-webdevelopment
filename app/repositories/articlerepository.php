@@ -11,7 +11,7 @@ class ArticleRepository extends Repository
             
             $stmt->execute();
             
-            $stmt->setFetchMode(PDO::FETCH_CLASS, 'Article');
+            $stmt->setFetchMode(PDO::FETCH_ASSOC);
             $products = $stmt->fetchAll();
 
             return $products;
