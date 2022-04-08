@@ -7,7 +7,7 @@ class ArticleRepository extends Repository
     function getAllArticles()
     {
         try {
-            $stmt = $this->connection->prepare("SELECT * FROM product");
+            $stmt = $this->connection->prepare("SELECT * FROM order_product");
             
             $stmt->execute();
             
