@@ -8,7 +8,9 @@ class ArticleRepository extends Repository
     {
         try {
             $stmt = $this->connection->prepare("SELECT * FROM products");
+            
             $stmt->execute();
+            
             $stmt->setFetchMode(PDO::FETCH_CLASS, 'Product');
             $products = $stmt->fetchAll();
 
