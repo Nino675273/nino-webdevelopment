@@ -19,4 +19,12 @@ class ArticleController
             echo json_encode($laptops);
         }
     }
+    public function article()
+    {
+        if ($_SERVER["REQUEST_METHOD"] === "GET") {
+            $laptops = $this->articleService->getAllArticles();
+            header('Content-Type: application/json; charset=utf-8');
+            echo json_encode($laptops);
+        }
+    }
 }
