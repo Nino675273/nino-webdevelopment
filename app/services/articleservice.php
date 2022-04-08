@@ -3,9 +3,9 @@ require __DIR__ . '/../repositories/articlerepository.php';
 
 
 class ArticleService {
-    public function getAll() {
+    public function getAllArticles() {
         $repository = new ArticleRepository();
-        return $repository->getAll();
+        return $repository->getAllArticles();
     }
 
     
