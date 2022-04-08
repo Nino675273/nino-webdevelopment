@@ -3,8 +3,6 @@
 $json_string = file_get_contents("https://nino-webdevelopment.herokuapp.com/api/article");
 $parsed_json = json_decode($json_string, true);
 
-var_dump($json_string);
-
 ?>
 
 <div class="bg-light text-center p-5">
@@ -16,19 +14,18 @@ var_dump($json_string);
             <h2>Laptops</h2>
             <div class="row">
                 <?php
-                require_once("fakeproducts.php");
                 foreach ($parsed_json as $product) {
                 ?>
                     <div class="col-sm-6 col-md-3 col-xxl-4 mb-3">
                     <div class="card h-100 shadow">
                     <div class="card-body">
-                      <img src="<?= $product->image ?>" alt="<?= $product->title ?>" class="img-thumbnail" title="?=$product->title?">
-                        <p><?= $product->title ?></p>
-                        <p><small><?= $product->category ?></small></p>
-                        <p><small><?= $product->description ?></small></p>
+                      <img src="<?= $product['imageurl'] ?>" alt="<?= $product['name'] ?>" class="img-thumbnail" title="?=$product['name']?">
+                        <p><?= $product['name'] ?></p>
+                        <p><small><?= $product['company'] ?></small></p>
+                        <p><small><?= $product['description'] ?></small></p>
                     </div>
                     <div class="card-footer">
-                        <span class="float-start"><p class="text-muted mb-0"> € <?= number_format($product->price, 2, '.') ?></p></span>
+                        <span class="float-start"><p class="text-muted mb-0"> € <?= number_format($product['price'], 2, '.') ?></p></span>
 
                         <button type="button" class="float-end rounded-circle btn btn-secondary text-uppercase">  Add to Cart  </button>
                     </div>
