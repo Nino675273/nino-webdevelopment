@@ -19,6 +19,7 @@ class ArticleController
             echo json_encode($laptops);
         }
     }
+    /*
     public function article()
     {
         if ($_SERVER["REQUEST_METHOD"] === "GET") {
@@ -27,4 +28,5 @@ class ArticleController
             echo json_encode($laptops);
         }
     }
+    */
 }

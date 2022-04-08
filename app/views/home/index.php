@@ -3,6 +3,8 @@
 $json_string = file_get_contents("https://nino-webdevelopment.herokuapp.com/api/article");
 $parsed_json = json_decode($json_string, true);
 
+var_dump($json_string);
+
 ?>
 
 <div class="bg-light text-center p-5">
@@ -15,7 +17,7 @@ $parsed_json = json_decode($json_string, true);
             <div class="row">
                 <?php
                 require_once("fakeproducts.php");
-                foreach ($products as $product) {
+                foreach ($parsed_json as $product) {
                 ?>
                     <div class="col-sm-6 col-md-3 col-xxl-4 mb-3">
                     <div class="card h-100 shadow">

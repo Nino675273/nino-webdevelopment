@@ -1,18 +1,17 @@
 <?php
 require __DIR__ . '/repository.php';
 require __DIR__ . '/../models/article.php';
-require __DIR__ . '/../models/product.php';
 
 class ArticleRepository extends Repository
 {
     function getAllArticles()
     {
         try {
-            $stmt = $this->connection->prepare("SELECT * FROM products");
+            $stmt = $this->connection->prepare("SELECT * FROM article");
             
             $stmt->execute();
             
-            $stmt->setFetchMode(PDO::FETCH_CLASS, 'Product');
+            $stmt->setFetchMode(PDO::FETCH_CLASS, 'Article');
             $products = $stmt->fetchAll();
 
             return $products;
